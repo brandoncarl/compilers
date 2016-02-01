@@ -174,5 +174,12 @@ module.exports = [{
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["consolidate", "underscore"],
-}]
   "syntax"  : "['underscore'].render(str, options, next)"
+},
+{
+  "name"    : "uglify-js",
+  "ext"     : "js",
+  "type"    : "js",
+  "modules" : ["uglify-js"],
+  "syntax"  : "minify(str, { \"fromString\" : true})"
+}];
