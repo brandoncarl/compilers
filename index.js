@@ -19,9 +19,9 @@ var desires = require("desires"),
 
 
 // Ensure our configurations are properly formatted
-specs.forEach(preprocessConfig);
+specs.forEach(preprocessSpec);
 
-function preprocessConfig(config) {
+function preprocessSpec(config) {
 
   // Create dictionary by name
   byName[config.name] = config;
