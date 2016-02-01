@@ -167,12 +167,12 @@ module.exports = [{
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["consolidate", "lodash"],
-  "syntax"  : "lodash.render(str, options, next)"
+  "syntax"  : "['lodash'].render(str, options, next)"
 },
 {
   "name"    : "underscore",
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["consolidate", "underscore"],
-  "syntax"  : "underscore.render(str, options, next)"
 }]
+  "syntax"  : "['underscore'].render(str, options, next)"
