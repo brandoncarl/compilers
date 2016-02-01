@@ -47,14 +47,15 @@ function createFunction(fn) {
 }
 
 
-root = module.exports = function(name) {
+root = module.exports = function(name, config) {
 
   // Return cache if available
   if (cache[name]) return cache[name];
 
-  var config  = byName[name],
-      modules = config.modules.map(desires),
-      syntax  = config.syntax,
+  var engine   = byName[name],
+      config   = config || {},
+      modules  = engine.modules.map(function(x) { return desires(x, { dir : config.dir }); }),
+      syntax   = engine.syntax,
       fn;
 
   // If blank, return
