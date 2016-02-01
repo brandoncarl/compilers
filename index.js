@@ -14,6 +14,7 @@
 var desires = require("desires"),
     specs   = require("./specifications"),
     byName  = {},
+    byExt   = {},
     cache   = {},
     root;
 
@@ -31,6 +32,11 @@ function preprocessSpec(config) {
 
   // Expand extensions
   if (!Array.isArray(config.ext)) config.ext = [config.ext];
+
+  // Create dictionary by extension
+  config.ext.forEach(function(ext) {
+    if (!byExt[ext]) byExt[ext] = config.name;
+  });
 
 }
 
@@ -84,5 +90,10 @@ root = module.exports = function(name, config) {
 
   return fn;
 
+};
+
+
+root.defaultEngineForExtension = function(ext) {
+  return byExt[ext];
 };
 
