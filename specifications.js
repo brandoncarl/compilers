@@ -48,7 +48,7 @@ module.exports = [{
   "ext"     : "coffee",
   "type"    : "js",
   "modules" : ["coffee-script"],
-  "syntax"  : "coffee(str)"
+  "syntax"  : "compile(str)"
 },
 {
   "name"    : "stylus",
