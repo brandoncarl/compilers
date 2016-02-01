@@ -182,4 +182,11 @@ module.exports = [{
   "type"    : "js",
   "modules" : ["uglify-js"],
   "syntax"  : "minify(str, { \"fromString\" : true})"
+},
+{
+  "name"    : "clean-css",
+  "ext"     : "css",
+  "type"    : "css",
+  "modules" : ["clean-css"],
+  "syntax"  : "new $0().minify(str).styles"
 }];
