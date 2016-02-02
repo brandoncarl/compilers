@@ -46,9 +46,10 @@ root = module.exports = function(name, config) {
   if (cache[name]) return cache[name];
 
   var engine = byName[name],
-      config = config || {},
       syntax = engine.syntax,
       modules;
+
+  config = config || {};
 
   // Optionally fetch modules using `npm install`
   if (config.fetch)
@@ -57,12 +58,14 @@ root = module.exports = function(name, config) {
     modules = engine.modules.map(function(x) { return require(x); });
 
   // If blank, return
-  if ("" === syntax)
-    return cache[name] = createFunction(function(str, options, next) { return next(null, str); });
+  if ("" === syntax) {
+    cache[name] = createFunction(function(str, options, next) { return next(null, str); });
+    return cache[name];
+  }
 
   // Add core module to beginning (with dot property unless brackets)
   if (-1 === syntax.indexOf("$0"))
-    syntax = "$0" + (("(" === syntax[0] || "[" === syntax[0]) ? "" : ".") + syntax
+    syntax = "$0" + (("(" === syntax[0] || "[" === syntax[0]) ? "" : ".") + syntax;
 
   // Reinsert modules
   modules.forEach(function(mod, i) {
@@ -121,7 +124,7 @@ function createFunction(fn) {
       options = {};
     }
     fn(str, options, next);
-  }
+  };
 }
 
 
@@ -136,7 +139,7 @@ function parseSpecification(spec) {
   byName[spec.name] = spec;
 
   // Insert modules if missing
-  spec["modules"] = spec["modules"] || [];
+  spec.modules = spec.modules || [];
 
   // Expand extensions
   if (!Array.isArray(spec.ext)) spec.ext = [spec.ext];
