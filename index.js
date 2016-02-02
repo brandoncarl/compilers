@@ -25,17 +25,17 @@ specs.forEach(parseSpecification);
 function parseSpecification(spec) {
 
   // Create dictionary by name
-  byName[config.name] = config;
+  byName[spec.name] = spec;
 
   // Insert modules if missing
-  config["modules"] = config["modules"] || [];
+  spec["modules"] = spec["modules"] || [];
 
   // Expand extensions
-  if (!Array.isArray(config.ext)) config.ext = [config.ext];
+  if (!Array.isArray(spec.ext)) spec.ext = [spec.ext];
 
   // Create dictionary by extension
-  config.ext.forEach(function(ext) {
-    if (!byExt[ext]) byExt[ext] = config.name;
+  spec.ext.forEach(function(ext) {
+    if (!byExt[ext]) byExt[ext] = spec.name;
   });
 
 }
