@@ -77,15 +77,17 @@ root = module.exports = function(name, config) {
   if (syntax.indexOf("next)") > -1)
 
     // If already async...
-    return createFunction(function(str, options, next) {
-      try { eval(syntax); } catch (err) { next(err); };
+    cache[name] = createFunction(function(str, options, next) {
+      try { eval(syntax); } catch (err) { next(err); }
     });
 
   else
 
-    return createFunction(function(str, options, next) {
+    cache[name] = createFunction(function(str, options, next) {
       try { next(null, eval(syntax)); } catch (err) { next(err); }
     });
+
+  return cache[name];
 
 };
 
