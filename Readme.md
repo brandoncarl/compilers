@@ -39,7 +39,7 @@ var compileHandlebars = preschool("handlebars", { dir : process.cwd() });
 [.defaultEngineForExtension(ext)](#preschool.defaultEngineForExtension) ⇒ <code>String</code>  
 
 <a name="preschool"></a>
-## preschool ⇒ <code>function</code>
+### preschool ⇒ <code>function</code>
 Loads a processor (templating, transpiler, minification), and standardizes
 callback to be fn(err, compiled). Defaults to `npm install` packages if they
 are missing. To disable, set `options.fetch` to `false`;
