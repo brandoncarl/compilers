@@ -22,17 +22,17 @@ var desires = require("desires"),
 /**
 
   Loads a processor (templating, transpiler, minification), and standardizes
-  callback to be fn(err, compiled). Defaults to "npm install" packages if they
-  are missing. To disable, set options.fetch to `false`;
+  callback to be fn(err, compiled). Defaults to `npm install` packages if they
+  are missing. To disable, set `options.fetch` to `false`;
 
   Most packages are referenced by their npm name, common exceptions include:
   javascript, html, css, es2015, and react.
 
-  Note that the callback is node-style (err, compiled).
+  Note that the callback is node style (err, compiled).
 
   @param {String} name Name of module (npm install name).
   @param {Object} options Options include {fetch} and {dir} (install directory).
-  @returns {Function} Processor of format fn(str, options, next)
+  @returns {Function} Processor of format `fn(str, options, next)`
 
   @example
   preschool("typescript")
