@@ -113,10 +113,10 @@ are located at the top of the specification.
 
 ### Writing a specification
 The syntax processor does the following:
-1. Prepends `$0` to the string if string doesn't contain $0.
-2. Replaces all `$x` with `modules[x]`. This allows incorporate of modules array.
+1. Prepends `$0` to the string if string doesn't contain `$0`.  
+2. Replaces all `$x` with `modules[x]`. This allows incorporate of modules array.  
 3. Creates function that evaluates command. Note that `str`, `options` and `next`
-   have special meanings.
+   have special meanings.  
 
 Using Handlebars as an example:
 ```js
