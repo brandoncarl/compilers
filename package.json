@@ -1,14 +1,18 @@
 {
   "name": "preschool",
   "version": "0.1.4",
-  "description": "",
+  "description": "Universal preprocessor loader for templating and transpiling",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Brandon Carl (http://www.brandoncarl.com/)",
+  "author": "Brandon Carl",
   "license": "MIT",
   "dependencies": {
     "desires": "^0.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brandoncarl/preschool.git"
   }
 }
