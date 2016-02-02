@@ -20,9 +20,9 @@ var desires = require("desires"),
 
 
 // Ensure our configurations are properly formatted
-specs.forEach(preprocessSpec);
+specs.forEach(parseSpecification);
 
-function preprocessSpec(config) {
+function parseSpecification(spec) {
 
   // Create dictionary by name
   byName[config.name] = config;
