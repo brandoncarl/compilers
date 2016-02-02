@@ -40,7 +40,7 @@ var desires = require("desires"),
 
 **/
 
-root = module.exports = function(name, config) {
+root = module.exports = function(name, options) {
 
   // Return cache if available
   if (cache[name]) return cache[name];
@@ -49,11 +49,11 @@ root = module.exports = function(name, config) {
       syntax = engine.syntax,
       modules;
 
-  config = config || {};
+  options = options || {};
 
   // Optionally fetch modules using `npm install`
-  if (config.fetch)
-    modules = engine.modules.map(function(x) { return desires(x, { dir : config.dir }); });
+  if (options.fetch)
+    modules = engine.modules.map(function(x) { return desires(x, { dir : options.dir }); });
   else
     modules = engine.modules.map(function(x) { return require(x); });
 
