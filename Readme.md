@@ -121,7 +121,7 @@ The syntax processor does the following:
 Using Handlebars as an example:
 ```js
 // Input
-handlebars.render(str, options, next)
+"handlebars.render(str, options, next)"
 
 // Interim
 modules[0].handlebars.render(str, options, next)
