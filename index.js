@@ -22,8 +22,8 @@ var desires = require("desires"),
 /**
 
   Loads a processor (templating, transpiler, minification), and standardizes
-  callback to be fn(err, compiled). Optionally "npm install" packages if they
-  are missing.
+  callback to be fn(err, compiled). Defaults to "npm install" packages if they
+  are missing. To disable, set options.fetch to `false`;
 
   Most packages are referenced by their npm name, common exceptions include:
   javascript, html, css, es2015, and react.
@@ -49,7 +49,7 @@ root = module.exports = function(name, options) {
       syntax = engine.syntax,
       modules;
 
-  options = options || {};
+  options = Object.assign({ fetch : true }, options);
 
   // Optionally fetch modules using `npm install`
   if (options.fetch)
