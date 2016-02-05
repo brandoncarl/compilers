@@ -1,6 +1,6 @@
 {
   "name": "preschool",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Universal preprocessor loader for templating and transpiling",
   "main": "index.js",
   "scripts": {
