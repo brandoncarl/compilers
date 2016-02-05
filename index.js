@@ -74,18 +74,11 @@ root = module.exports = function(name, options) {
 
   // While using "eval" is typically considered to be bad form, when calling another function the
   // performance does not appear suffer in V8. See http://jsperf.com/eval-function-call.
-  if (syntax.indexOf("next)") > -1)
+  // We find that "eval" is slightly faster
+  if (-1 === syntax.indexOf("next)"))
+    syntax = "try { next(null," + syntax + "); } catch (err) { next(err); }"
 
-    // If already async...
-    cache[name] = createFunction(function(str, options, next) {
-      try { eval(syntax); } catch (err) { next(err); }
-    });
-
-  else
-
-    cache[name] = createFunction(function(str, options, next) {
-      try { next(null, eval(syntax)); } catch (err) { next(err); }
-    });
+  cache[name] = createFunction(modules, syntax);
 
   return cache[name];
 
@@ -119,13 +112,14 @@ root.defaultEngineForExtension = function(ext) {
 
 // Wraps function to ensure proper polymorphism. We could use a library
 // like "reorg", but we code manually given simplicity and desire for performance.
-function createFunction(fn) {
+function createFunction(modules, syntax) {
+  var fn = new Function("modules", "str", "options", "next", syntax);
   return function(str, options, next) {
     if ("function" === typeof options) {
       next = options;
       options = {};
     }
-    fn(str, options, next);
+    fn(modules, str, options, next);
   };
 }
 
