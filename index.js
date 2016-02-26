@@ -1,6 +1,6 @@
 /**
 
-  preschool.js
+  compilers.js
   Copyright 2016 Brandon Carl
   MIT Licensed
 
@@ -35,7 +35,7 @@ var desires = require("desires"),
   @returns {Function} Processor of format `fn(str, options, next)`
 
   @example
-  preschool("typescript")
+  compilers("typescript")
   // => fn(str, options, next) for typescript
 
 **/
@@ -94,7 +94,7 @@ root = module.exports = function(name, options) {
   @returns {String} Name of the default engine.
 
   @example
-  preschool.defaultEngineForExtension("ts");
+  compilers.defaultEngineForExtension("ts");
   // => "typescript"
 
 **/

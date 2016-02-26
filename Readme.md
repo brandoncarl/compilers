@@ -1,4 +1,4 @@
-# preschool
+# compilers
 
 Given a request for a preprocessor/transpiler/templating engine/postprocessor,
 spits back a function of the form `function(err, compiled)`.
@@ -11,13 +11,13 @@ a specification below.
 ## Installation
 
 ```
-$ npm install preschool
+$ npm install compilers
 ```
 
 ## Examples
 
 ```js
-var compileHandlebars = preschool("handlebars");
+var compileHandlebars = compilers("handlebars");
 
 compileHandlebars("<div>Hello, {{ name }}!</div>", { name : "Mickey" }, function(err, compiled) {
   console.log(compiled);
@@ -25,21 +25,21 @@ compileHandlebars("<div>Hello, {{ name }}!</div>", { name : "Mickey" }, function
 });
 
 // Don't "npm install" missing modules (defaults to installing)
-var compileHandlebars = preschool("handlebars", { fetch : false });
+var compileHandlebars = compilers("handlebars", { fetch : false });
 // => Throws error if handlebars is missing
 
 // "npm install" to different directory
-var compileHandlebars = preschool("handlebars", { dir : process.cwd() });
+var compileHandlebars = compilers("handlebars", { dir : process.cwd() });
 ```
 
 
 ## API
 
-[preschool](#preschool) ⇒ <code>function</code>  
-[.defaultEngineForExtension(ext)](#preschool.defaultEngineForExtension) ⇒ <code>String</code>  
+[compilers](#compilers) ⇒ <code>function</code>  
+[.defaultEngineForExtension(ext)](#compilers.defaultEngineForExtension) ⇒ <code>String</code>  
 
-<a name="preschool"></a>
-### preschool ⇒ <code>function</code>
+<a name="compilers"></a>
+### compilers ⇒ <code>function</code>
 Loads a processor (templating, transpiler, minification), and standardizes
 callback to be fn(err, compiled). Defaults to `npm install` packages if they
 are missing. To disable, set `options.fetch` to `false`;
@@ -58,12 +58,12 @@ Note that the callback is node style (err, compiled).
 
 **Example**  
 ```js
-preschool("typescript")
+compilers("typescript")
   // => fn(str, options, next) for typescript
 ```
 
-<a name="preschool.defaultEngineForExtension"></a>
-### preschool.defaultEngineForExtension(ext) ⇒ <code>String</code>
+<a name="compilers.defaultEngineForExtension"></a>
+### compilers.defaultEngineForExtension(ext) ⇒ <code>String</code>
 Returns the default engine for an extension. Leading "." is removed.
 
 **Returns**: <code>String</code> - Name of the default engine.  
@@ -74,7 +74,7 @@ Returns the default engine for an extension. Leading "." is removed.
 
 **Example**  
 ```js
-preschool.defaultEngineForExtension("ts");
+compilers.defaultEngineForExtension("ts");
   // => "typescript"
 ```
 

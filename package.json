@@ -1,5 +1,5 @@
 {
-  "name": "preschool",
+  "name": "compilers",
   "version": "0.2.1",
   "description": "Universal preprocessor loader for templating and transpiling",
   "main": "index.js",
@@ -13,6 +13,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/brandoncarl/preschool.git"
+    "url": "git://github.com/brandoncarl/compilers.git"
   }
 }
