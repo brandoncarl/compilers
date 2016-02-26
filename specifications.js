@@ -21,6 +21,13 @@ module.exports = [{
   "syntax"  : ""
 },
 {
+  "name"    : "html-minifier",
+  "ext"     : "html",
+  "type"    : "html",
+  "modules" : ["html-minifier"],
+  "syntax"  : "minify(str)"
+},
+{
   "name"    : "es2015",
   "ext"     : "js",
   "type"    : "js",
