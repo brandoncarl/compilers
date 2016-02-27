@@ -36,7 +36,7 @@ var compileHandlebars = compilers("handlebars", { dir : process.cwd() });
 ## API
 
 [compilers](#compilers) ⇒ <code>function</code>  
-[.defaultEngineForExtension(ext)](#compilers.defaultEngineForExtension) ⇒ <code>String</code>  
+[.defaultCompilerForExtension(ext)](#compilers.defaultCompilerForExtension) ⇒ <code>String</code>  
 
 <a name="compilers"></a>
 ### compilers ⇒ <code>function</code>
@@ -62,11 +62,11 @@ compilers("typescript")
   // => fn(str, options, next) for typescript
 ```
 
-<a name="compilers.defaultEngineForExtension"></a>
-### compilers.defaultEngineForExtension(ext) ⇒ <code>String</code>
-Returns the default engine for an extension. Leading "." is removed.
+<a name="compilers.defaultCompilerForExtension"></a>
+### compilers.defaultCompilerForExtension(ext) ⇒ <code>String</code>
+Returns the default compiler for an extension. Leading "." is removed.
 
-**Returns**: <code>String</code> - Name of the default engine.  
+**Returns**: <code>String</code> - Name of the default compiler.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -74,7 +74,7 @@ Returns the default engine for an extension. Leading "." is removed.
 
 **Example**  
 ```js
-compilers.defaultEngineForExtension("ts");
+compilers.defaultCompilerForExtension("ts");
   // => "typescript"
 ```
 
@@ -89,7 +89,7 @@ A specification consists of the following:
 
 | Param | Type | Description |
 | --- | --- | --- |
-| name | String | Name of engine (by convention we use npm package name) |
+| name | String | Name of compiler (by convention we use npm package name) |
 | ext | String | Typical file extension (e.g. handlebars uses hbs) |
 | type | String | Type of output file (html, css, js) |
 | modules | Array | Array of required modules |
