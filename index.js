@@ -45,17 +45,17 @@ root = module.exports = function(name, options) {
   // Return cache if available
   if (cache[name]) return cache[name];
 
-  var engine = byName[name],
-      syntax = engine.syntax,
+  var pipeline = byName[name],
+      syntax = pipeline.syntax,
       modules;
 
   options = Object.assign({ fetch : true }, options);
 
   // Optionally fetch modules using `npm install`
   if (options.fetch)
-    modules = engine.modules.map(function(x) { return desires(x, { dir : options.dir }); });
+    modules = pipeline.modules.map(function(x) { return desires(x, { dir : options.dir }); });
   else
-    modules = engine.modules.map(function(x) { return require(x); });
+    modules = pipeline.modules.map(function(x) { return require(x); });
 
   // If blank, return
   if ("" === syntax) {
@@ -88,10 +88,10 @@ root = module.exports = function(name, options) {
 
 /**
 
-  Returns the default engine for an extension. Leading "." is removed.
+  Returns the default pipeline for an extension. Leading "." is removed.
 
   @param {String} ext The file extension.
-  @returns {String} Name of the default engine.
+  @returns {String} Name of the default pipeline.
 
   @example
   compilers.defaultCompilerForExtension("ts");
