@@ -59,7 +59,7 @@ root = module.exports = function(name, options) {
 
   // If blank, return
   if ("" === syntax) {
-    cache[name] = createFunction(function(str, options, next) { return next(null, str); });
+    cache[name] = function(str, options, next) { return next(null, str); };
     return cache[name];
   }
 
