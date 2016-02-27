@@ -94,12 +94,12 @@ root = module.exports = function(name, options) {
   @returns {String} Name of the default engine.
 
   @example
-  compilers.defaultEngineForExtension("ts");
+  compilers.defaultCompilerForExtension("ts");
   // => "typescript"
 
 **/
 
-root.defaultEngineForExtension = function(ext) {
+root.defaultCompilerForExtension = function(ext) {
   return byExt[ext.replace(/^\./, "")];
 };
 
