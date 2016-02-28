@@ -9,7 +9,7 @@
   "author": "Brandon Carl",
   "license": "MIT",
   "dependencies": {
-    "desires": "^0.2.1"
+    "desires": "^0.3.0"
   },
   "repository": {
     "type": "git",
