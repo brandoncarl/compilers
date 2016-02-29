@@ -84,7 +84,7 @@ root = module.exports = function(name, options) {
     if (pipeline.suffix)
       syntax = syntax.replace("next", "function(err, compiled) { next(err, compiled" + pipeline.suffix + "); }")
 
-  cache[name] = createFunction(modules, syntax);
+  cache[name] = createFunction(modules, syntax, pipeline.options);
 
   return cache[name];
 
@@ -118,14 +118,16 @@ root.defaultCompilerForExtension = function(ext) {
 
 // Wraps function to ensure proper polymorphism. We could use a library
 // like "reorg", but we code manually given simplicity and desire for performance.
-function createFunction(modules, syntax) {
-  var fn = new Function("modules", "str", "options", "next", syntax);
-  return function(str, options, next) {
-    if ("function" === typeof options) {
-      next = options;
-      options = {};
+// `context` refers to local variables while `options` referes to compiler options
+function createFunction(modules, syntax, options) {
+  var fn = new Function("modules", "str", "context", "options", "next", syntax);
+  options = options || {};
+  return function(str, context, next) {
+    if ("function" === typeof context) {
+      next = context;
+      context = {};
     }
-    fn(modules, str, options, next);
+    fn(modules, str, context, options, next);
   };
 }
 
