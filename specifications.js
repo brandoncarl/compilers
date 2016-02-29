@@ -98,7 +98,11 @@ module.exports = [{
   "ext"     : "js",
   "type"    : "js",
   "modules" : ["sweet.js"],
-  "syntax"  : "compile(str)"
+  "syntax"  : "compile(str, options)",
+  "options"  : {
+    readableNames : true
+  },
+  "suffix"  : ".code"
 },
 {
   "name"    : "handlebars",
