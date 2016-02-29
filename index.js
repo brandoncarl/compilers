@@ -76,7 +76,13 @@ root = module.exports = function(name, options) {
   // performance does not appear suffer in V8. See http://jsperf.com/eval-function-call.
   // We find that "eval" is slightly faster
   if (-1 === syntax.indexOf("next)"))
-    syntax = "try { next(null," + syntax + "); } catch (err) { next(err); }"
+    if (pipeline.suffix)
+      syntax = "try { next(null," + syntax + pipeline.suffix + "); } catch (err) { next(err); }"
+    else
+      syntax = "try { next(null," + syntax + "); } catch (err) { next(err); }"
+  else
+    if (pipeline.suffix)
+      syntax = syntax.replace("next", "function(err, compiled) { next(err, compiled" + pipeline.suffix + "); }")
 
   cache[name] = createFunction(modules, syntax);
 

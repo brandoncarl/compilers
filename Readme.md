@@ -94,6 +94,7 @@ A specification consists of the following:
 | type | String | Type of output file (html, css, js) |
 | modules | Array | Array of required modules |
 | syntax | String | The function to be evaluated |
+| suffix  | String | Optional suffix to call on results (sync or async) |
 
 ### Example specification
 ```js
