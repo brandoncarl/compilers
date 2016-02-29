@@ -202,7 +202,8 @@ module.exports = [{
   "ext"     : "js",
   "type"    : "js",
   "modules" : ["uglify-js"],
-  "syntax"  : "minify(str, { \"fromString\" : true}).code"
+  "syntax"  : "minify(str, { \"fromString\" : true })",
+  "suffix"  : ".code"
 },
 {
   "name"    : "clean-css",
