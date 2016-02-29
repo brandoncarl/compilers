@@ -44,9 +44,10 @@ module.exports = [{
   "name"    : "es2015",
   "ext"     : "js",
   "type"    : "js",
-  "modules" : ["babel", "babel-preset-es2015"],
+  "modules" : ["babel-core", "babel-preset-es2015"],
   "syntax"  : "transform(str, options)",
-  "options" : { "presets" : ["es2015"] }
+  "options" : { "presets" : ["es2015"] },
+  "suffix"  : ".code"
 },
 {
   "name"    : "react",
