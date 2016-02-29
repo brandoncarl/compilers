@@ -42,24 +42,24 @@ var compileHandlebars = compilers("handlebars", { dir : process.cwd() });
 ### compilers ⇒ <code>function</code>
 Loads a processor (templating, transpiler, minification), and standardizes
 callback to be fn(err, compiled). Defaults to `npm install` packages if they
-are missing. To disable, set `options.fetch` to `false`;
+are missing. To disable, set `context.fetch` to `false`;
 
 Most packages are referenced by their npm name, common exceptions include:
 javascript, html, css, es2015, and react.
 
 Note that the callback is node style (err, compiled).
 
-**Returns**: <code>function</code> - Processor of format `fn(str, options, next)`  
+**Returns**: <code>function</code> - Processor of format `fn(str, context, next)`  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | name | <code>String</code> | Name of module (npm install name). |
-| options | <code>Object</code> | Options include {fetch} and {dir} (install directory). |
+| context | <code>Object</code> | Options include {fetch} and {dir} (install directory). |
 
 **Example**  
 ```js
 compilers("typescript")
-  // => fn(str, options, next) for typescript
+  // => fn(str, context, next) for typescript
 ```
 
 <a name="compilers.defaultCompilerForExtension"></a>
@@ -94,6 +94,7 @@ A specification consists of the following:
 | type | String | Type of output file (html, css, js) |
 | modules | Array | Array of required modules |
 | syntax | String | The function to be evaluated |
+| options | Object | Optional options to be accessed via `options` |
 | suffix  | String | Optional suffix to call on results (sync or async) |
 
 ### Example specification
@@ -103,7 +104,7 @@ A specification consists of the following:
   "ext"     : "hbs",
   "type"    : "html",
   "modules" : ["consolidate", "handlebars"],
-  "syntax"  : "handlebars.render(str, options, next)"
+  "syntax"  : "handlebars.render(str, context, next)"
 }
 ```
 
@@ -116,19 +117,19 @@ are located at the top of the specification.
 The syntax processor does the following:
 1. Prepends `$0` to the string if string doesn't contain `$0`.  
 2. Replaces all `$x` with `modules[x]`. This allows incorporate of modules array.  
-3. Creates function that evaluates command. Note that `str`, `options` and `next`
+3. Creates function that evaluates command. Note that `str`, `context` and `next`
    have special meanings.  
 
 Using Handlebars as an example:
 ```js
 // Input
-"handlebars.render(str, options, next)"
+"handlebars.render(str, context, next)"
 
 // Interim
-modules[0].handlebars.render(str, options, next)
+modules[0].handlebars.render(str, context, next)
 
 // Equivalent function
-function(str, options, next) { consolidate.handlebars.render(str, options, next); }
+function(str, context, next) { consolidate.handlebars.render(str, context, next); }
 ```
 
 ## License
