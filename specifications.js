@@ -173,7 +173,8 @@ module.exports = [{
   "ext"     : "less",
   "type"    : "css",
   "modules" : ["less"],
-  "syntax"  : "render(str, options, next)"
+  "syntax"  : "render(str, options, next)",
+  "suffix"  : ".css"
 },
 {
   "name"    : "autoprefixer",
