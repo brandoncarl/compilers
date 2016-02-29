@@ -62,14 +62,14 @@ module.exports = [{
   "ext"     : "styl",
   "type"    : "css",
   "modules" : ["stylus"],
-  "syntax"  : "render(str, options, next)"
+  "syntax"  : "render(str, context, next)"
 },
 {
   "name"    : "ejs",
   "ext"     : "ejs",
   "type"    : "html",
   "modules" : ["consolidate", "ejs"],
-  "syntax"  : "ejs.render(str, options, next)"
+  "syntax"  : "ejs.render(str, context, next)"
 },
 {
   "name"    : "livescript",
@@ -90,7 +90,7 @@ module.exports = [{
   "ext"     : "hbs",
   "type"    : "html",
   "modules" : ["consolidate", "handlebars"],
-  "syntax"  : "handlebars.render(str, options, next)"
+  "syntax"  : "handlebars.render(str, context, next)"
 },
 {
   "name"    : "swig",
@@ -104,28 +104,27 @@ module.exports = [{
   "ext"     : "mustache",
   "type"    : "html",
   "modules" : ["consolidate", "mustache"],
-  "syntax"  : "mustache.render(str, options, next)"
+  "syntax"  : "mustache.render(str, context, next)"
 },
 {
   "name"    : "dust",
   "ext"     : "dust",
   "type"    : "html",
   "modules" : ["consolidate", "dustjs-linkedin", "dust-helpers"],
-  "syntax"  : "dust.render(str, options, next)"
+  "syntax"  : "dust.render(str, context, next)"
 },
 {
   "name"    : "haml",
   "ext"     : "haml",
   "type"    : "html",
   "modules" : ["consolidate", "hamljs"],
-  "syntax"  : "haml.render(str, options, next)"
+  "syntax"  : "haml.render(str, context, next)"
 },
 {
   "name"    : "nunjucks",
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["consolidate", "nunjucks"],
-  "syntax"  : "nunjucks.render(str, options, next)"
 },
 {
   "name"    : "swig",
@@ -133,20 +132,21 @@ module.exports = [{
   "type"    : "html",
   "modules" : ["consolidate", "swig"],
   "syntax"  : "swig.render(str, options, next)"
+  "syntax"  : "nunjucks.render(str, context, next)"
 },
 {
   "name"    : "hogan",
   "ext"     : "html",
   "type"    : "html",
-  "modules" : ["consolidate", "hogan"],
-  "syntax"  : "hogan.render(str, options, next)"
+  "modules" : ["consolidate", "hogan.js"],
+  "syntax"  : "hogan.render(str, context, next)"
 },
 {
   "name"    : "jade",
   "ext"     : "jade",
   "type"    : "html",
   "modules" : ["consolidate", "jade"],
-  "syntax"  : "jade.render(str, options, next)"
+  "syntax"  : "jade.render(str, context, next)"
 },
 {
   "name"    : "sass",
@@ -174,14 +174,14 @@ module.exports = [{
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["consolidate", "lodash"],
-  "syntax"  : "['lodash'].render(str, options, next)"
+  "syntax"  : "['lodash'].render(str, context, next)"
 },
 {
   "name"    : "underscore",
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["consolidate", "underscore"],
-  "syntax"  : "['underscore'].render(str, options, next)"
+  "syntax"  : "['underscore'].render(str, context, next)"
 },
 {
   "name"    : "uglify-js",
