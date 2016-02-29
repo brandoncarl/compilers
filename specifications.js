@@ -116,7 +116,7 @@ module.exports = [{
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["consolidate", "swig"],
-  "syntax"  : "swig.render(str, options, next)"
+  "syntax"  : "swig.render(str, { locals : context }, next)",
 },
 {
   "name"    : "mustache",
