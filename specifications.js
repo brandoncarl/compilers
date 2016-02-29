@@ -165,7 +165,8 @@ module.exports = [{
   "ext"     : ["sass", "scss"],
   "type"    : "css",
   "modules" : ["node-sass"],
-  "syntax"  : "renderSync({ \"data\" : str })"
+  "syntax"  : "render({ \"data\" : str }, next)",
+  "suffix"  : ".css.toString()"
 },
 {
   "name"    : "less",
