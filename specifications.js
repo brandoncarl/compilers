@@ -129,7 +129,7 @@ module.exports = [{
   "name"    : "dust",
   "ext"     : "dust",
   "type"    : "html",
-  "modules" : ["consolidate", "dustjs-linkedin", "dust-helpers"],
+  "modules" : ["consolidate", "dustjs-linkedin", "dustjs-helpers"],
   "syntax"  : "dust.render(str, context, next)"
 },
 {
