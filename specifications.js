@@ -144,13 +144,6 @@ module.exports = [{
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["consolidate", "nunjucks"],
-},
-{
-  "name"    : "swig",
-  "ext"     : "html",
-  "type"    : "html",
-  "modules" : ["consolidate", "swig"],
-  "syntax"  : "swig.render(str, options, next)"
   "syntax"  : "nunjucks.render(str, context, next)"
 },
 {
