@@ -53,9 +53,10 @@ module.exports = [{
   "name"    : "react",
   "ext"     : "jsx",
   "type"    : "js",
-  "modules" : ["babel", "babel-preset-react"],
+  "modules" : ["babel-core", "babel-preset-react"],
   "syntax"  : "transform(str, options)",
-  "options" : { "presets" : ["react"] }
+  "options"  : { "presets" : ["react"] },
+  "suffix"  : ".code"
 },
 {
   "name"    : "typescript",
