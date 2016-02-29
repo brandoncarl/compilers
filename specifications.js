@@ -25,7 +25,20 @@ module.exports = [{
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["html-minifier"],
-  "syntax"  : "minify(str)"
+  "syntax"  : "minify(str, options)",
+  "options"  : {
+    "removeComments": true,
+    "removeCommentsFromCDATA": true,
+    "removeCDATASectionsFromCDATA": true,
+    "collapseWhitespace": true,
+    "collapseBooleanAttributes": true,
+    "removeAttributeQuotes": true,
+    "removeRedundantAttributes": true,
+    "useShortDoctype": true,
+    "removeEmptyAttributes": true,
+    "minifyJS": true,
+    "minifyCSS": true
+  }
 },
 {
   "name"    : "es2015",
