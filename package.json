@@ -4,7 +4,7 @@
   "description": "Universal preprocessor loader for templating and transpiling",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/.bin/istanbul cover _mocha -- -R spec && ./node_modules/.bin/codecov"
   },
   "author": "Brandon Carl",
   "license": "MIT",
