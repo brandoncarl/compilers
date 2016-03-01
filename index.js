@@ -49,10 +49,11 @@ root = module.exports = function(name, options) {
       syntax = pipeline.syntax,
       modules;
 
-  options = Object.assign({ fetch : true }, options);
+  // Set default options
+  options = options || {};
 
   // Optionally fetch modules using `npm install`
-  if (options.fetch)
+  if (options.fetch || "undefined" === typeof options.fetch)
     modules = pipeline.modules.map(function(x) { return desires(x, { dir : options.dir }); });
   else
     modules = pipeline.modules.map(function(x) { return require(x); });
