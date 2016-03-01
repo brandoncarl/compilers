@@ -62,7 +62,7 @@ function test(file) {
       name = file.replace(/\.js$/g, "");
 
   describe(name, function() {
-    this.timeout(10000);
+    this.timeout(20000);
 
     it("should compile correctly", function(next) {
       var p = path.join(__dirname, "fixtures", file),
