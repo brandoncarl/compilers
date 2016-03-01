@@ -3,21 +3,18 @@ module.exports = [{
   "name"    : "javascript",
   "ext"     : "js",
   "type"    : "js",
-  "modules" : [],
   "syntax"  : ""
 },
 {
   "name"    : "css",
   "ext"     : "css",
   "type"    : "css",
-  "modules" : [],
   "syntax"  : ""
 },
 {
   "name"    : "html",
   "ext"     : "html",
   "type"    : "html",
-  "modules" : [],
   "syntax"  : ""
 },
 {
