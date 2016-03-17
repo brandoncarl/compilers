@@ -134,8 +134,8 @@ module.exports = [{
   "name"    : "haml",
   "ext"     : "haml",
   "type"    : "html",
-  "modules" : ["consolidate", "hamljs"],
-  "syntax"  : "haml.render(str, context, next)"
+  "modules" : ["hamljs"],
+  "syntax"  : "render(str, context)"
 },
 {
   "name"    : "nunjucks",
