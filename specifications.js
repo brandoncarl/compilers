@@ -155,8 +155,9 @@ module.exports = [{
   "name"    : "jade",
   "ext"     : "jade",
   "type"    : "html",
-  "modules" : ["consolidate", "jade"],
-  "syntax"  : "jade.render(str, context, next)"
+  "modules" : ["jade"],
+  "syntax"  : "render(str, options, context)",
+  "options" : {}
 },
 {
   "name"    : "sass",
