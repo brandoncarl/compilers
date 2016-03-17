@@ -141,8 +141,8 @@ module.exports = [{
   "name"    : "nunjucks",
   "ext"     : "html",
   "type"    : "html",
-  "modules" : ["consolidate", "nunjucks"],
-  "syntax"  : "nunjucks.render(str, context, next)"
+  "modules" : ["nunjucks"],
+  "syntax"  : "renderString(str, context)"
 },
 {
   "name"    : "hogan",
