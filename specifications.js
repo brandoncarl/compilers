@@ -148,8 +148,8 @@ module.exports = [{
   "name"    : "hogan",
   "ext"     : "html",
   "type"    : "html",
-  "modules" : ["consolidate", "hogan.js"],
-  "syntax"  : "hogan.render(str, context, next)"
+  "modules" : ["hogan.js"],
+  "syntax"  : "compile(str).render(context)"
 },
 {
   "name"    : "jade",
