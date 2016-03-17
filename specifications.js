@@ -105,8 +105,8 @@ module.exports = [{
   "name"    : "handlebars",
   "ext"     : "hbs",
   "type"    : "html",
-  "modules" : ["consolidate", "handlebars"],
-  "syntax"  : "handlebars.render(str, context, next)"
+  "modules" : ["handlebars"],
+  "syntax"  : "compile(str)(context)"
 },
 {
   "name"    : "swig",
