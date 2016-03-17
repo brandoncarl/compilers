@@ -1,6 +1,6 @@
 {
   "name": "compilers",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Universal preprocessor loader for templating and transpiling",
   "main": "index.js",
   "scripts": {
