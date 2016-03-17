@@ -120,8 +120,8 @@ module.exports = [{
   "name"    : "mustache",
   "ext"     : "mustache",
   "type"    : "html",
-  "modules" : ["consolidate", "mustache"],
-  "syntax"  : "mustache.render(str, context, next)"
+  "modules" : ["mustache"],
+  "syntax"  : "render(str, context)"
 },
 {
   "name"    : "dust",
