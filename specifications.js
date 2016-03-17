@@ -127,8 +127,8 @@ module.exports = [{
   "name"    : "dust",
   "ext"     : "dust",
   "type"    : "html",
-  "modules" : ["consolidate", "dustjs-linkedin", "dustjs-helpers"],
-  "syntax"  : "dust.render(str, context, next)"
+  "modules" : ["dustjs-linkedin", "dustjs-helpers"],
+  "syntax"  : "renderSource(str, context, next)"
 },
 {
   "name"    : "haml",
