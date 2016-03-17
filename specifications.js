@@ -193,8 +193,8 @@ module.exports = [{
   "name"    : "underscore",
   "ext"     : "html",
   "type"    : "html",
-  "modules" : ["consolidate", "underscore"],
-  "syntax"  : "['underscore'].render(str, context, next)"
+  "modules" : ["underscore"],
+  "syntax"  : "template(str)(context)"
 },
 {
   "name"    : "uglify-js",
