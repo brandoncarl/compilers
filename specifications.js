@@ -80,8 +80,9 @@ module.exports = [{
   "name"    : "ejs",
   "ext"     : "ejs",
   "type"    : "html",
-  "modules" : ["consolidate", "ejs"],
-  "syntax"  : "ejs.render(str, context, next)"
+  "modules" : ["ejs"],
+  "syntax"  : "compile(str, options)(context)",
+  "options" : {}
 },
 {
   "name"    : "livescript",
