@@ -186,8 +186,8 @@ module.exports = [{
   "name"    : "lodash",
   "ext"     : "html",
   "type"    : "html",
-  "modules" : ["consolidate", "lodash"],
-  "syntax"  : "['lodash'].render(str, context, next)"
+  "modules" : ["lodash"],
+  "syntax"  : "template(str)(context)"
 },
 {
   "name"    : "underscore",
