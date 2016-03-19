@@ -156,7 +156,7 @@ module.exports = [{
   "ext"     : "jade",
   "type"    : "html",
   "modules" : ["jade"],
-  "syntax"  : "render(str, options, context)",
+  "syntax"  : "render(str, context)",
   "options" : {}
 },
 {
