@@ -155,7 +155,15 @@ module.exports = [{
   "name"    : "jade",
   "ext"     : "jade",
   "type"    : "html",
-  "modules" : ["jade"],
+  "modules" : ["pug"],
+  "syntax"  : "render(str, context)",
+  "options" : {}
+},
+{
+  "name"    : "pug",
+  "ext"     : "pug",
+  "type"    : "html",
+  "modules" : ["pug"],
   "syntax"  : "render(str, context)",
   "options" : {}
 },
