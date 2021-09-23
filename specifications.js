@@ -81,7 +81,7 @@ module.exports = [{
   "ext"     : "ejs",
   "type"    : "html",
   "modules" : ["ejs"],
-  "syntax"  : "compile(str, options)(context)",
+  "syntax"  : "compile(str, options)",
   "options" : {}
 },
 {
@@ -107,56 +107,56 @@ module.exports = [{
   "ext"     : "hbs",
   "type"    : "html",
   "modules" : ["handlebars"],
-  "syntax"  : "compile(str)(context)"
+  "syntax"  : "compile(str)"
 },
 {
   "name"    : "swig",
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["swig"],
-  "syntax"  : "render(str, { locals : context })",
+  "syntax"  : "compile(str)"
 },
 {
   "name"    : "mustache",
   "ext"     : "mustache",
   "type"    : "html",
   "modules" : ["mustache"],
-  "syntax"  : "render(str, context)"
+  "syntax"  : "function(context){return render(str, context);}"
 },
 {
   "name"    : "dust",
   "ext"     : "dust",
   "type"    : "html",
   "modules" : ["dustjs-linkedin", "dustjs-helpers"],
-  "syntax"  : "renderSource(str, context, next)"
+  "syntax"  : "compile(str)"
 },
 {
   "name"    : "haml",
   "ext"     : "haml",
   "type"    : "html",
   "modules" : ["hamljs"],
-  "syntax"  : "render(str, context)"
+  "syntax"  : "compile(str)"
 },
 {
   "name"    : "nunjucks",
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["nunjucks"],
-  "syntax"  : "renderString(str, context)"
+  "syntax"  : "compile(str)"
 },
 {
   "name"    : "hogan",
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["hogan.js"],
-  "syntax"  : "compile(str).render(context)"
+  "syntax"  : ";(function(){var _c=compile(str, options);return function(context){ return _c.render(context) })()"
 },
 {
   "name"    : "jade",
   "ext"     : "jade",
   "type"    : "html",
   "modules" : ["pug"],
-  "syntax"  : "render(str, context)",
+  "syntax"  : "compile(str, options)",
   "options" : {}
 },
 {
@@ -164,7 +164,7 @@ module.exports = [{
   "ext"     : "pug",
   "type"    : "html",
   "modules" : ["pug"],
-  "syntax"  : "render(str, context)",
+  "syntax"  : "compile(str, options)",
   "options" : {}
 },
 {
@@ -195,14 +195,14 @@ module.exports = [{
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["lodash"],
-  "syntax"  : "template(str)(context)"
+  "syntax"  : "template(str)"
 },
 {
   "name"    : "underscore",
   "ext"     : "html",
   "type"    : "html",
   "modules" : ["underscore"],
-  "syntax"  : "template(str)(context)"
+  "syntax"  : "template(str)"
 },
 {
   "name"    : "uglify-js",
