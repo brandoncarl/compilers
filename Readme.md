@@ -3,8 +3,6 @@
 <a href="https://circleci.com/gh/brandoncarl/compilers/tree/master"><img src="https://img.shields.io/circleci/project/brandoncarl/compilers/master.svg" alt="Build Status"></a>
 [![codecov.io](https://codecov.io/github/brandoncarl/compilers/coverage.svg?branch=master)](https://codecov.io/github/brandoncarl/compilers?branch=master)
 
-This package is not supported and is only used for a personal project.
-
 Given a request for a preprocessor/transpiler/templating engine/postprocessor,
 spits back a function of the form `function(err, compiled)`.
 
